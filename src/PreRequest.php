@@ -14,20 +14,29 @@ namespace ChinaObject\PreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class PreRequest extends Request
+class PreRequest
 {
     public $data;
     public $request;
 
     public function __construct(Request $re)
     {
-        parent::__construct();
         $this->data = array_merge($re->route()->parameters(),$re->all());
         $this->request = $re;
         $validator = Validator::make($this->data,$this->rules(),$this->messages());
         if ($validator->fails()){
             throw new PreRequestException($validator->errors()->first());
         }
+    }
+
+    public function __call($method,$parameters)
+    {
+        return call_user_func_array([$this->request, $method], $parameters);
+    }
+
+    public function __get($var)
+    {
+        return $this->request->$var;
     }
 
     public function rules()
