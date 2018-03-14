@@ -1,0 +1,26 @@
+{
+    "name": "chinaobject/laravel-pre-request",
+    "description": "This is a pre request processing package for laravel",
+    "keywords": ["laravel", "request", "pre-request"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "china object",
+            "email": "lpg525@icloud.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/framework": "5.5.x"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "ChinaObject\\PreRequest\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "illuminate/framework": "5.5.x"
+    }
+}
