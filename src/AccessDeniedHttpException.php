@@ -1,34 +1,19 @@
 <?php
 // +----------------------------------------------------------------------
-// | TestService.php
+// | AccessDeniedHttpException.php
 // +----------------------------------------------------------------------
 // | Description: 
 // +----------------------------------------------------------------------
-// | Time: 2018/3/15 上午11:34
+// | Time: 2018/3/15 下午1:26
 // +----------------------------------------------------------------------
 // | Author: Object,半醒的狐狸<2252390865@qq.com>
 // +----------------------------------------------------------------------
 
 namespace ChinaObject\PreRequest;
 
-class TestService extends PreRequest
+use Symfony\Component\HttpKernel\Exception\HttpException;
+
+class AccessDeniedHttpException extends HttpException
 {
-    public function rules()
-    {
-        return [
 
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-
-        ];
-    }
-
-    public function assembling()
-    {
-        return $this->data;
-    }
 }

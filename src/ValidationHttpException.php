@@ -1,6 +1,6 @@
 <?php
 // +----------------------------------------------------------------------
-// | InvaidRequestParamException.php
+// | ValidationHttpException.php
 // +----------------------------------------------------------------------
 // | Description: 
 // +----------------------------------------------------------------------
@@ -11,9 +11,9 @@
 
 namespace ChinaObject\PreRequest;
 
-use Exception;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class PreRequestException extends Exception
+class ValidationHttpException extends HttpException
 {
 
 }
