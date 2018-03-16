@@ -56,11 +56,18 @@ class PreRequest
 
     public function fullData()
     {
-        return $this->assembling();
+        return collect($this->assembling());
     }
 
     public function assembling()
     {
         return $this->data;
+    }
+    
+    public function validated()
+    {
+        return $this->only(collect($this->rules())->keys()->map(function ($rule) {
+            return str_contains($rule, '.') ? explode('.', $rule)[0] : $rule;
+        })->unique()->toArray());
     }
 }
