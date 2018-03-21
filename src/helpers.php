@@ -15,3 +15,17 @@ if (!function_exists("api")){
         return $api.'\\'.$api;
     }
 }
+
+if(!function_exists("all2string")){
+	function all2string($data)
+	{
+		if(in_array(gettype($data),['array','object'])){
+			$data = (array)$data;
+			foreach ($data as $k => $v) {
+				$data[$k] = all2string($v);
+			}
+		}else{
+			return (string)$data;
+		}
+	}
+}
