@@ -24,6 +24,7 @@ if(!function_exists("all2string")){
 			foreach ($data as $k => $v) {
 				$data[$k] = all2string($v);
 			}
+			return $data;
 		}else{
 			return (string)$data;
 		}
