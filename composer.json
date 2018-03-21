@@ -16,7 +16,10 @@
     "autoload": {
         "psr-4": {
             "ChinaObject\\PreRequest\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "minimum-stability": "dev",
     "require-dev": {
