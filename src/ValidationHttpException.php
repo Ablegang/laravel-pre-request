@@ -11,9 +11,9 @@
 
 namespace ChinaObject\PreRequest;
 
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use Exception;
 
-class ValidationHttpException extends HttpException
+class ValidationHttpException extends Exception
 {
 
 }
