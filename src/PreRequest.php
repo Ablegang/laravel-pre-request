@@ -24,11 +24,11 @@ class PreRequest extends FormRequest
         if ($this->authorize() === false) {
             throw new AccessDeniedHttpException();
         }
-
+        
         $validator = app('validator')->make($this->data, $this->rules(), $this->messages());
 
         if ($validator->fails()) {
-            throw new ValidationHttpException($validator->errors()->first());
+            throw new ValidationHttpException(400,$validator->errors()->first());
         }
     }
 
@@ -50,5 +50,15 @@ class PreRequest extends FormRequest
     public function authorize()
     {
         return true;
+    }
+
+    public function rules()
+    {
+        return [];
+    }
+
+    public function messages()
+    {
+        return [];
     }
 }
