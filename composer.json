@@ -10,13 +10,20 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "laravel/framework": "5.5.*"
     },
     "autoload": {
         "psr-4": {
             "ChinaObject\\PreRequest\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "minimum-stability": "dev",
-    "require-dev": {}
+    "require-dev": {
+        "php": ">=7.0",
+        "laravel/framework": "5.5.*"
+    }
 }

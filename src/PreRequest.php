@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------
 // | PreRequest.php
 // +----------------------------------------------------------------------
-// | Description: 
+// | Description: 请求前置处理
 // +----------------------------------------------------------------------
 // | Time: 2018/3/15 上午11:20
 // +----------------------------------------------------------------------
@@ -11,42 +11,25 @@
 
 namespace ChinaObject\PreRequest;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 
-class PreRequest
+class PreRequest extends FormRequest
 {
     public $data;
-    public $request;
 
-    public function __construct(Request $re)
+    public function validate()
     {
-        $this->data = array_merge($re->route()->parameters(),$re->all());
-        $this->request = $re;
-        $validator = Validator::make($this->data,$this->rules(),$this->messages());
-        if ($validator->fails()){
-            throw new PreRequestException($validator->errors()->first());
+        $this->data = array_merge($this->route()->parameters(),$this->all());
+
+        if ($this->authorize() === false) {
+            throw new AccessDeniedHttpException();
         }
-    }
 
-    public function __call($method,$parameters)
-    {
-        return call_user_func_array([$this->request, $method], $parameters);
-    }
+        $validator = app('validator')->make($this->data, $this->rules(), $this->messages());
 
-    public function __get($var)
-    {
-        return $this->request->$var;
-    }
-
-    public function rules()
-    {
-        return [];
-    }
-
-    public function messages()
-    {
-        return [];
+        if ($validator->fails()) {
+            throw new ValidationHttpException($validator->errors()->first());
+        }
     }
 
     public function fill()
@@ -56,18 +39,11 @@ class PreRequest
 
     public function fullData()
     {
-        return collect($this->assembling());
+        return $this->assembling();
     }
 
     public function assembling()
     {
         return $this->data;
-    }
-    
-    public function validated()
-    {
-        return $this->only(collect($this->rules())->keys()->map(function ($rule) {
-            return str_contains($rule, '.') ? explode('.', $rule)[0] : $rule;
-        })->unique()->toArray());
     }
 }
