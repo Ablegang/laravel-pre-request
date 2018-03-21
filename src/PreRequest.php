@@ -46,4 +46,9 @@ class PreRequest extends FormRequest
     {
         return $this->data;
     }
+
+    public function authorize()
+    {
+        return true;
+    }
 }
