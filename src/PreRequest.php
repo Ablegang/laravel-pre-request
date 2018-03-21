@@ -21,15 +21,11 @@ class PreRequest extends FormRequest
     {
         $this->data = array_merge($this->route()->parameters(),$this->all());
 
-        if ($this->authorize() === false) {
-            throw new AccessDeniedHttpException();
-        }
+        throw_if($this->authorize() === false, new AccessDeniedHttpException);
 
         $validator = app('validator')->make($this->data, $this->rules(), $this->messages());
 
-        if ($validator->fails()) {
-            throw new ValidationHttpException($validator->errors()->first());
-        }
+        throw_if($validator->fails(), new ValidationHttpException($validator->errors()->first()));
     }
 
     public function fill()
