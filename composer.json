@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ChinaObject\\laravel-pre-request\\": "src/"
+            "ChinaObject\\PreRequest\\": "src/"
         },
         "files": [
             "src/helpers.php"
