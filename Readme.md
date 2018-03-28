@@ -76,7 +76,7 @@ class LoginRequest extends PreRequest
     
     public function messages()
     {
-        // the failed messages
+        // the invaild messages
         return [
             'username.*' => 'username must be required',
             'client.*' => 'client must be array'
