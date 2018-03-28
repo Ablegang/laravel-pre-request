@@ -85,7 +85,7 @@ class LoginRequest extends PreRequest
     
     public function authorize()
     {
-        // the authorize check , if you want to check the authorize , you may wirte the logic for youself.
+        // the authorize check , if you want to check the authorize , you may wirte the logic for yourself.
         return true;
     }
     
