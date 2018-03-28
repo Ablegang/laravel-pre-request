@@ -3,7 +3,7 @@
 # What is my thinking?
 
 In the daily developing , you may use the MVC pattern,  
-but as the project gets bigger and bigger,  
+but as the project gets heavier and heavier,  
 you will find the controllers were become too fatter to maintain.  
 
 # What should we do?
