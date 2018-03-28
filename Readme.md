@@ -21,7 +21,7 @@ or :
 composer required chinaobject/laravel-pre-request
 ```
 
-# what can the laravel-pre-request do?
+# What can the laravel-pre-request do?
 
 - reducing the controller's complexity
 - check the route parameters
