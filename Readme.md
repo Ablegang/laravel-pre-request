@@ -2,9 +2,9 @@
 
 # What is my tinking?
 
-In the daily developing , you may use the MVC pattern,
-but as the project gets bigger and bigger,
-you will find the controllers were become too fatter to maintain.
+In the daily developing , you may use the MVC pattern,  
+but as the project gets bigger and bigger,  
+you will find the controllers were become too fatter to maintain.  
 
 # What should we do?
 
@@ -27,7 +27,7 @@ composer required chinaobject/laravel-pre-request
 - check the route parameters
 - parameters assembling
 
-Use this package , you will split the code about check from the controller.
+Use this package , you will split the code about check from the controller.  
 For example:
 ```
 // before use this package,you may write the controller in this way
@@ -51,11 +51,11 @@ class Login extends Controller
 }
 ```
 
-Ok,in this way,if the login logic is very complex,you can imagine how big the controller was.
-So,the laravel framework provides the FormRequest to solve this problem.
-But,you know,the FormRequest can only check the Request's params,it can't check the router's params.
-If you want to use the restful at your api,you may only use the "route pattern" for check params.
-As you knows,the "route pattern" can only provide simple checking,such as "required","format"...
+Ok,in this way,if the login logic is very complex,you can imagine how big the controller was.  
+So,the laravel framework provides the FormRequest to solve this problem.  
+But,you know,the FormRequest can only check the Request's params,it can't check the router's params.  
+If you want to use the restful at your api,you may only use the "route pattern" for check params.  
+As you knows,the "route pattern" can only provide simple checking,such as "required","format"...  
 
 Use laravel-pre-request package:
 ```
