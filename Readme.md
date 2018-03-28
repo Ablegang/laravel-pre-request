@@ -1,6 +1,6 @@
 > This is a pre request processing package of laravel
 
-# What is my tinking?
+# What is my thinking?
 
 In the daily developing , you may use the MVC pattern,  
 but as the project gets bigger and bigger,  
