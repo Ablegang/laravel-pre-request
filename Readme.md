@@ -114,4 +114,4 @@ class LoginRequest extends PreRequest
 
 That's all.Thanks for your reading.
 
-If you have any problem , you can get some help by email <lpg525@icloud.com>
+Feel free to email me if you have any question，2252390865@qq.com
