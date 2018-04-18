@@ -15,14 +15,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PreRequest extends FormRequest
 {
-    public $data;
+    public $data = [];
 
     public function validate()
     {
         $this->data = array_merge($this->route()->parameters(),$this->all());
 
         if ($this->authorize() === false) {
-            throw new AccessDeniedHttpException();
+            throw new AccessDeniedHttpException(401);
         }
         
         $validator = app('validator')->make($this->data, $this->rules(), $this->messages());
