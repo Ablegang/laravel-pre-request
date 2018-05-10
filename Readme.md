@@ -11,12 +11,6 @@ you will find the controllers were become too fatter to maintain.
 use the Ablegang/laravel-pre-request.
 
 you may get it by :
-
-```
-composer require Ablegang/laravel-pre-request
-```
-
-or :
 ```
 composer require chinaobject/laravel-pre-request
 ```
