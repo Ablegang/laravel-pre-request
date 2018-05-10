@@ -13,12 +13,12 @@ use the Ablegang/laravel-pre-request.
 you may get it by :
 
 ```
-composer required Ablegang/laravel-pre-request
+composer require Ablegang/laravel-pre-request
 ```
 
 or :
 ```
-composer required chinaobject/laravel-pre-request
+composer require chinaobject/laravel-pre-request
 ```
 
 # What can the laravel-pre-request do?
