@@ -22,7 +22,7 @@ class PreRequest extends FormRequest
         $this->data = array_merge($this->route()->parameters(),$this->all());
 
         if ($this->authorize() === false) {
-            throw new AccessDeniedHttpException(401);
+            throw new AccessDeniedHttpException(401,'权限不足');
         }
         
         $validator = app('validator')->make($this->data, $this->rules(), $this->messages());
